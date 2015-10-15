@@ -15,15 +15,25 @@ public class StringCrop implements IStringCrop {
      * @param args
      * @return String result
      * @throws IllegalArgumentException
+     * 
+     * Method that receive args and crop it.
      */
     @Override
     public String crops(String[] args) throws IllegalArgumentException {
+        
+        // If the length of arguments is less then 2, the exception is thrown
         if (args.length < 2) {
             throw new IllegalArgumentException("Arguments number must be bigger then 2");
         }
 
         String result = args[0];
 
+        /**
+         *  For each pair of argument it's verified if the char is equal 
+         * the end of the other argument, if is equal it's saved to be 
+         * removed. After that the string is concatenated with the second
+         * argument.
+         */
         for (int i = 1; i < args.length; i++) {
             String arg = args[i];
             String partToReplace = "";
