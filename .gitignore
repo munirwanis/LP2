@@ -6,3 +6,4 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/
+/L1/E2/nbproject/private/
