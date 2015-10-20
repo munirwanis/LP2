@@ -39,4 +39,28 @@ public class TriangleCore {
         
         return semiPerimeter;
     }
+    
+    /**
+     * Retorna qual o tipo do triangulo
+     * @param a
+     * @param b
+     * @param c
+     * @return response
+     */
+    public static String triangleType(double a, double b, double c) {
+        String sentence = "O triangulo e' %s.";
+        
+        if (a == b && a == c) {
+            String response = String.format(sentence, "equilatero");
+            return response;
+        }
+        else if (a == b || a == c || b == c) {
+            String response = String.format(sentence, "isosceles");
+            return response;
+        }
+        else {
+            String response = String.format(sentence, "escaleno");
+            return response;
+        }
+    }
 }

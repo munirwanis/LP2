@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ * Enumerador para a forma geometrica
  * @author Munir Wanis
  */
 public enum CalculateEnum {

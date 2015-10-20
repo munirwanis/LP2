@@ -15,6 +15,11 @@ public class Ex2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        try {
+            System.out.println(CalculateCore.calcula(args));
+        } catch (Exception e) {
+            System.out.printf("%s: %s\n", e.getClass(), e.getMessage());
+        }
     }
     
 }
