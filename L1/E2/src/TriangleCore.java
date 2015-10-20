@@ -9,6 +9,14 @@
  * @author Munir Wanis
  */
 public class TriangleCore {
+    
+    /**
+     * Funcao que calcula a area do triangulo
+     * @param a
+     * @param b
+     * @param c
+     * @return response
+     */
     public static double triangleArea(double a, double b, double c) {
         double semiPerimeter = TriangleCore.semiperimeter(a, b, c);
         
@@ -18,6 +26,14 @@ public class TriangleCore {
         return response;
     }
     
+    
+    /**
+     * Funcao que calcula o semi-perimetro do triangulo
+     * @param a
+     * @param b
+     * @param c
+     * @return semiPerimeter
+     */
     private static double semiperimeter(double a, double b, double c) {
         double semiPerimeter = (a + b + c)/2;
         

@@ -10,6 +10,11 @@
  */
 public class CircleCore {
 
+    /**
+     * Funcao que calcula a area do circulo
+     * @param radius
+     * @return response
+     */
     public static double circleArea(double radius) {
         double response = Math.PI * Math.pow(radius, 2);
         
