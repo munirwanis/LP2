@@ -27,5 +27,28 @@ public class Produto {
     
     private long Vendidos;
     
-    private double Promocao;
+    private long Promocao;
+    
+    /**
+     * Method returns the price with promotion
+     * @param price
+     * @param promotion
+     * @return newPrice
+     */
+    private double calculatePromotion(double price, long promotion) {
+        if (promotion == 0) {
+            return price;
+        }
+        double percent = promotion/100;
+        double newPrice = price * percent;
+        return newPrice;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("%2d\t%20s  %5.1f %3d %3d %2d", 
+                this.Codigo, this.Nome, 
+                this.calculatePromotion(this.Preco, this.Promocao), 
+                this.Estoque, this.Vendidos, this.Promocao);
+    }
 }
