@@ -8,13 +8,40 @@
  * @author Munir Wanis
  */
 public class Produto {
-    public Produto(int codigo, String nome, double preco, long estoque, long vendidos, double promocao) {
+
+    /**
+     * Constructor to set all private values
+     * @param codigo
+     * @param nome
+     * @param preco
+     * @param estoque
+     * @param vendidos
+     * @param promocao
+     */
+    public Produto(int codigo, String nome, double preco, long estoque, long vendidos, long promocao) {
         this.Codigo = codigo;
         this.Nome = nome;
         this.Preco = preco;
         this.Estoque = estoque;
         this.Vendidos = vendidos;
         this.Promocao = promocao;
+    }
+    
+    /**
+     * Constructor without Promocao, default value is 0
+     * @param codigo
+     * @param nome
+     * @param preco
+     * @param estoque
+     * @param vendidos 
+     */
+    public Produto(int codigo, String nome, double preco, long estoque, long vendidos) {
+        this.Codigo = codigo;
+        this.Nome = nome;
+        this.Preco = preco;
+        this.Estoque = estoque;
+        this.Vendidos = vendidos;
+        this.Promocao = 0;
     }
     
     private int Codigo;
@@ -28,6 +55,30 @@ public class Produto {
     private long Vendidos;
     
     private long Promocao;
+    
+    public int getCodigo() {
+        return this.Codigo;
+    }
+    
+    public String getNome() {
+        return this.Nome;
+    }
+    
+    public double getPreco() {
+        return this.calculatePromotion(Preco, Promocao);
+    }
+    
+    public long getEstoque() {
+        return this.Estoque;
+    }
+    
+    public long getVendidos() {
+        return this.Vendidos;
+    }
+    
+    public long getPromocao() {
+        return this.Promocao;
+    }
     
     /**
      * Method returns the price with promotion
@@ -46,7 +97,7 @@ public class Produto {
     
     @Override
     public String toString() {
-        return String.format("%2d\t%20s  %5.1f %3d %3d %2d", 
+        return String.format("%2d\t%20s  %5.1f %3d %3d %2d%% off!", 
                 this.Codigo, this.Nome, 
                 this.calculatePromotion(this.Preco, this.Promocao), 
                 this.Estoque, this.Vendidos, this.Promocao);
