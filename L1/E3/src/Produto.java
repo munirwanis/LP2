@@ -90,16 +90,25 @@ public class Produto {
         if (promotion == 0) {
             return price;
         }
-        double percent = promotion/100;
-        double newPrice = price * percent;
+        double percent = (double)promotion/100;
+        double newPrice = price - (price * percent);
         return newPrice;
     }
     
     @Override
     public String toString() {
-        return String.format("%2d\t%20s  %5.1f %3d %3d %2d%% off!", 
-                this.Codigo, this.Nome, 
-                this.calculatePromotion(this.Preco, this.Promocao), 
-                this.Estoque, this.Vendidos, this.Promocao);
+        
+        String response = String.format("%2d\t%20s  %10.2f %5d %5d ", this.Codigo, this.Nome, 
+                calculatePromotion(this.Preco, this.Promocao), 
+                this.Estoque, this.Vendidos);
+        
+        String promotionString = String.format("%5d%% off!", this.Promocao);
+        
+        if (this.Promocao != 0) {
+            return response += promotionString;
+        }
+        else {
+            return response;
+        }
     }
 }

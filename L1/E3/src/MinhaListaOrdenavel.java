@@ -17,7 +17,7 @@ import java.util.Comparator;
  */
 public class MinhaListaOrdenavel {
 
-    ArrayList<Produto> productList = new ArrayList<>();
+    public static ArrayList<Produto> productList = new ArrayList<>();
 
     private static Comparator<Produto> ascendingNameComparator = new Comparator<Produto>() {
 
@@ -78,8 +78,12 @@ public class MinhaListaOrdenavel {
             return (int) (SoldProduct2 - SoldProduct1);
         }
     };
+    
+    public static boolean add(Produto product) {
+        return productList.add(product);
+    }
 
-    public void menu() {
+    public static void menu() {
         System.out.println(
                   "Escolha seu modo de ordenacao\n"
                 + "1.Alfabetica (A-Z) - nome do produto\n"
@@ -99,18 +103,23 @@ public class MinhaListaOrdenavel {
                 case 1:
                     Collections.sort(productList, ascendingNameComparator);
                     printProducts();
+                    break;
                 case 2:
                     Collections.sort(productList, descendingNameComparator);
                     printProducts();
+                    break;
                 case 3:
                     Collections.sort(productList, minorPriceComparator);
                     printProducts();
+                    break;
                 case 4:
                     Collections.sort(productList, majorPriceComparator);
                     printProducts();
+                    break;
                 case 5:
                     Collections.sort(productList, bestSellingComparator);
                     printProducts();
+                    break;
                 default:
                     System.out.println("Opcao nao encontrada.");
                     menu();
@@ -123,7 +132,7 @@ public class MinhaListaOrdenavel {
     /**
      * Prints the list
      */
-    private void printProducts() {
+    private static void printProducts() {
         for (Produto item : productList) {
             System.out.println(item.toString());
         }
