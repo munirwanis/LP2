@@ -8,6 +8,34 @@
  *
  * @author Munir Wanis
  */
-public class Primo {
-    
+public class Primo extends Numero {
+
+    /**
+     *
+     * @param num
+     * @throws NaoPrimoEx
+     */
+    public Primo(int num) throws NaoPrimoEx {
+        super(num);
+    }    
+
+    @Override
+    int Soma(int Num) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    int Div(int Num) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    int Sub(int Num) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    int Mult(int Num) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
