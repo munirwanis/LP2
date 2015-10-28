@@ -9,12 +9,13 @@
  * @author Munir Wanis
  */
 public class NaoPrimoEx extends Exception {
+
     private int num;
-    
+
     public NaoPrimoEx(int num) {
         this.num = num;
     }
-    
+
     @Override
     public String getMessage() {
         return String.format("O numero %d nao e' primo", this.num);

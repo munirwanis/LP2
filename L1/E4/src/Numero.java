@@ -8,7 +8,7 @@
  *
  * @author Munir Wanis
  */
-abstract class Numero {
+public class Numero {
 
     private int Num;
 
@@ -16,13 +16,21 @@ abstract class Numero {
         this.Num = Num;
     }
 
-    abstract int Soma(int Num);
+    public int soma(int Num) throws NaoPrimoEx {
+        return this.Num + Num;
+    }
 
-    abstract int Div(int Num);
+    public int div(int Num) throws NaoPrimoEx {
+        return this.Num / Num;
+    }
 
-    abstract int Sub(int Num);
+    public int sub(int Num) throws NaoPrimoEx {
+        return this.Num - Num;
+    }
 
-    abstract int Mult(int Num);
+    public int mult(int Num) throws NaoPrimoEx {
+        return this.Num * Num;
+    }
 
     public int getNum() {
         return Num;
@@ -30,5 +38,10 @@ abstract class Numero {
 
     public void setNum(int Num) {
         this.Num = Num;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.Num);
     }
 }
