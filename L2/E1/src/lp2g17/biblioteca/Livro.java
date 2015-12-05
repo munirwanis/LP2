@@ -64,4 +64,28 @@ public class Livro {
         EmprestadoPara emprestadoPara = new EmprestadoPara(dataEmprestimo, dataDevolucao, codigoUsuario);
         this.emprestadoPara.add(emprestadoPara);
     }
+
+    public String getCodigoLivro() {
+        return codigoLivro;
+    }
+
+    public String getTituloLivro() {
+        return tituloLivro;
+    }
+
+    public CategoriasEnum getCategoria() {
+        return categoria;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public int getEmprestados() {
+        return emprestados;
+    }
+
+    public ArrayList<EmprestadoPara> getEmprestadoPara() {
+        return emprestadoPara;
+    }
 }

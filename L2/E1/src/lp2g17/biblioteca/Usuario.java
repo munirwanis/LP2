@@ -31,5 +31,17 @@ public class Usuario extends Pessoa {
         emprestimo.setDataEmprestimo(dataDevolucao);
         emprestimoList.add(emprestimo);
     }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public int getCodigoUsuario() {
+        return codigoUsuario;
+    }
+
+    public ArrayList<Emprestimo> getEmprestimoList() {
+        return emprestimoList;
+    }
     
 }

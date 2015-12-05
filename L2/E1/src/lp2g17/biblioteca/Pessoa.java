@@ -14,4 +14,14 @@ import java.util.GregorianCalendar;
 public class Pessoa {
     private String nome;
     private GregorianCalendar dataNasc;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public GregorianCalendar getDataNasc() {
+        return dataNasc;
+    }
+    
+    
 }
