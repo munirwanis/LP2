@@ -39,7 +39,7 @@ public class Usuario extends Pessoa {
     public int getCodigoUsuario() {
         return codigoUsuario;
     }
-
+    
     public ArrayList<Emprestimo> getEmprestimoList() {
         return emprestimoList;
     }

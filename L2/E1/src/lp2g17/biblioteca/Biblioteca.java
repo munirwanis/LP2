@@ -12,6 +12,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 /**
@@ -53,5 +55,15 @@ public class Biblioteca {
             }
             bufferedReader.close();
         }
+    }
+    
+    public void emprestaLivro(Usuario usuario, Livro livro) throws CopiaNaoDisponivelEx {
+        livro.empresta();
+        usuario.adLivroHist(GregorianCalendar.from(ZonedDateTime.now()), null, livro.getCodigoLivro());
+    }
+    
+    public void devolveLivro(Usuario usuario, Livro livro) throws NenhumaCopiaEmprestadaEx {
+        livro.devolve();
+        usuario.adLivroHist(null, GregorianCalendar.from(ZonedDateTime.now()), livro.getCodigoLivro());
     }
 }

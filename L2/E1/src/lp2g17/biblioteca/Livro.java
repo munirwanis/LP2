@@ -14,14 +14,14 @@ import java.util.GregorianCalendar;
  */
 public class Livro {
 
-    private String codigoLivro;
+    private int codigoLivro;
     private String tituloLivro;
     private CategoriasEnum categoria;
     private int quantidade;
     private int emprestados;
     private ArrayList<EmprestadoPara> emprestadoPara;
 
-    public Livro(String codigoLivro, String tituloLivro, int quantidade, int emprestados) {
+    public Livro(int codigoLivro, String tituloLivro, int quantidade, int emprestados) {
         this.codigoLivro = codigoLivro;
         this.tituloLivro = tituloLivro;
         this.quantidade = quantidade;
@@ -36,7 +36,7 @@ public class Livro {
         this.emprestadoPara = new ArrayList<EmprestadoPara>();
     }
 
-    public void setCodigoLivro(String codigoLivro) {
+    public void setCodigoLivro(int codigoLivro) {
         this.codigoLivro = codigoLivro;
     }
 
@@ -65,7 +65,7 @@ public class Livro {
         this.emprestadoPara.add(emprestadoPara);
     }
 
-    public String getCodigoLivro() {
+    public int getCodigoLivro() {
         return codigoLivro;
     }
 

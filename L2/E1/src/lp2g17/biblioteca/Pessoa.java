@@ -15,6 +15,11 @@ public class Pessoa {
     private String nome;
     private GregorianCalendar dataNasc;
 
+    public Pessoa(String nome, GregorianCalendar dataNasc) {
+        this.nome = nome;
+        this.dataNasc = dataNasc;
+    }    
+    
     public String getNome() {
         return nome;
     }
